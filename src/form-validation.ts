@@ -53,11 +53,11 @@ $('#newsletter').change(() => {
     }
 });
 
+
 $('#mediaChannelSelect').change(() => {
-    console.log('mediaChannelSelect');
+    // Only show 'otherMediaChannel' if 'Other' selected
+    if ($('#mediaChannelSelect').val() === 'Other')
+        $('#otherMediaChannel').show();
+    else
+        $('#otherMediaChannel').hide();
 });
-
-$('#otherMediaChannel').change(() => {
-    console.log('otherMediaChannel');
-});
-

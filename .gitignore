@@ -79,3 +79,4 @@ typings/
 
 # Custom rules
 dist/
+public/

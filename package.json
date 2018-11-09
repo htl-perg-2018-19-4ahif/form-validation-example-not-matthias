@@ -2,13 +2,12 @@
   "name": "9025-form-validation",
   "version": "1.0.0",
   "description": "Homework for Mobile Computing course at HTL Perg",
-  "main": "index.js",
   "scripts": {
-    "copy-bootstrap": "cpx ./node_modules/bootstrap/dist/css/bootstrap.css dist/ && cpx ./node_modules/bootstrap/dist/js/bootstrap.js dist/",
-    "copy-jquery": "cpx ./node_modules/jquery/dist/jquery.js dist/",
-    "build": "cpx *.{html,css} dist/ && npm run copy-bootstrap && npm run copy-jquery",
-    "lint": "tslint --config tslint.json *.ts",
-    "start": "concurrently \"tsc --outDir dist --watch form-validation.ts\" \"browser-sync start -c bs-config.js\""
+    "copy-bootstrap": "cpx ./node_modules/bootstrap/dist/css/bootstrap.css public/ && cpx ./node_modules/bootstrap/dist/js/bootstrap.js public/",
+    "copy-jquery": "cpx ./node_modules/jquery/dist/jquery.js public/",
+    "build": "cpx \"src/**/*.{html,css}\" public/ && npm run copy-bootstrap && npm run copy-jquery",
+    "lint": "tslint -c tslint.json *.ts",
+    "start": "concurrently \"tsc -w\" \"browser-sync start -c bs-config.js\""
   },
   "author": "not-matthias",
   "license": "MIT",

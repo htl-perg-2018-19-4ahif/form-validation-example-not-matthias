@@ -1,5 +1,4 @@
 module.exports = {
-    "files": "dist/index.*",
-    "server": "dist",
-    "reloadDebounce": 2000
+    "files": "public/index.*",
+    "server": "public"
 };
