@@ -5,25 +5,15 @@
 
 // Contains booleans, whether the elements are valid or not
 let canSubmit: any = {
-    validEmail: false,
+    validEmail: true,
     validFirstname: false,
     validLastname: false
 };
 
 
-
 //
 // Helper functions
 //
-
-/**
- * Set the disabled attribute for an element
- * @param element the specified element
- * @param disabled boolean whether the element should be disabled
- */
-const setDisabled = (element: string, disabled: boolean) => {
-    $(element).attr('disabled', disabled.toString());
-};
 
 /**
  * Shows the element when the specified string is empty
@@ -48,7 +38,9 @@ const checkFirstname = () => {
     // Show a warning if firstname is empty
     showIfEmpty('#firstNameMandatory', firstname);
 
+    // Update object and check submit
     canSubmit.validFirstname = (firstname) ? true : false;
+    checkSubmit();
 };
 
 const checkLastname = () => {
@@ -57,21 +49,27 @@ const checkLastname = () => {
     // Show a warning if lastname is empty
     showIfEmpty('#lastNameMandatory', email);
 
+    // Update object and check submit
     canSubmit.validLastname = (email) ? true : false;
+    checkSubmit();
 };
 
 const checkEmail = () => {
     if ($('#newsletter').is(':checked')) {
-        // Show a warning if email is empty
-        showIfEmpty('#emailMandatory', String($('#email').val()));
+        const email = String($('#email').val());
 
-        canSubmit.validEmail = true;
+        // Show a warning if email is empty
+        showIfEmpty('#emailMandatory', email);
+
+        canSubmit.validEmail = (email) ? true : false;
     } else {
         // Hide the warning if the newsletter checkbox is not enabled
         $('#emailMandatory').hide();
 
         canSubmit.validEmail = true;
     }
+
+    checkSubmit();
 };
 
 const checkMediaChannel = () => {
@@ -84,9 +82,9 @@ const checkMediaChannel = () => {
 
 const checkSubmit = () => {
     if (canSubmit.validEmail && canSubmit.validFirstname && canSubmit.validLastname)
-        setDisabled('#submit', false);
+        $('#submit').prop('disabled', false);
     else
-        setDisabled('#submit', true);
+        $('#submit').prop('disabled', true);
 };
 
 
