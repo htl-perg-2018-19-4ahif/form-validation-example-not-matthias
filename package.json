@@ -7,6 +7,7 @@
     "copy-jquery": "cpx ./node_modules/jquery/dist/jquery.js public/",
     "build": "cpx \"src/**/*.{html,css}\" public/ && npm run copy-bootstrap && npm run copy-jquery",
     "lint": "tslint -c tslint.json *.ts",
+    "deploy": "netlify deploy --dir=public --prod",
     "start": "concurrently \"tsc -w\" \"browser-sync start -c bs-config.js\""
   },
   "author": "not-matthias",

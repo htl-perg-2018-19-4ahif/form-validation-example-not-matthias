@@ -1,6 +1,6 @@
 # Form Validation Example
 
-A simple example of a form validation.
+A simple example of a form validation. Click [here](https://form-validation-example.netlify.com) to view the site.
 
 ## Installation
 
