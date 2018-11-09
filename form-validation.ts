@@ -4,7 +4,7 @@
  * @param disabled boolean whether the element should be disabled
  */
 const setDisabled = (element: string, disabled: boolean) => {
-    $(element).attr("disabled", disabled.toString());
+    $(element).attr('disabled', disabled.toString());
 };
 
 /**
@@ -20,34 +20,33 @@ const showIfEmpty = (element: string, text: string) => {
 };
 
 
-let firstname: string = "";
-let lastname: string = "";
-let email: string = "";
-let mediaChannel: string = "";
-let otherMedia: string = "";
+let firstname: string = '';
+let lastname: string = '';
+let email: string = '';
+let mediaChannel: string = '';
+let otherMedia: string = '';
 
-
-$("#firstName").keydown(() => {
-    firstname = String($("#firstName").val());
-    showIfEmpty("#firstNameMandatory", firstname);
+$('#firstName').keydown(() => {
+    firstname = String($('#firstName').val());
+    showIfEmpty('#firstNameMandatory', firstname);
 });
 
-$("#lastName").keydown(() => {
-    console.log(String($("#lastName").val()));
-    lastname = String($("#lastName").val());
-    showIfEmpty("#lastNameMandatory", lastname);
+$('#lastName').keydown(() => {
+    lastname = String($('#lastName').val());
+    showIfEmpty('#lastNameMandatory', lastname);
 });
 
-$("#email").keydown(() => {
-    email = String($("#email").val());
-    showIfEmpty("#emailMandatory", email);
+$('#email').keydown(() => {
+    email = String($('#email').val());
+
+    $('#newsletter').prop('checked');
 });
 
-$("#mediaChannelSelect").change(() => {
-    console.log("mediaChannelSelect");
+$('#mediaChannelSelect').change(() => {
+    console.log('mediaChannelSelect');
 });
 
-$("#otherMediaChannel").change(() => {
-    console.log("otherMediaChannel");
+$('#otherMediaChannel').change(() => {
+    console.log('otherMediaChannel');
 });
 

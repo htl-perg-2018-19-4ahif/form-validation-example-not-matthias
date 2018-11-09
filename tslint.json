@@ -9,7 +9,8 @@
         "no-consecutive-blank-lines": false,
         "trailing-comma": false,
         "no-console": false,
-        "curly": false
+        "curly": false,
+        "quotemark": [true, "single"]
     },
     "rulesDirectory": []
 }
