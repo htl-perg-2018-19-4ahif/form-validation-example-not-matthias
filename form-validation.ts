@@ -39,7 +39,8 @@ $('#lastName').keydown(() => {
 $('#email').keydown(() => {
     email = String($('#email').val());
 
-    $('#newsletter').prop('checked');
+    if ($('#newsletter').prop('checked'))
+        showIfEmpty('#email', email);
 });
 
 $('#mediaChannelSelect').change(() => {
