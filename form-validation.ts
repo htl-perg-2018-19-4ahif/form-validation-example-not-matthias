@@ -26,18 +26,6 @@ let email: string = "";
 let mediaChannel: string = "";
 let otherMedia: string = "";
 
-$("#firstName").keydown(() => {
-    console.log(`Keydown: ${String($("#firstName").val())}`);
-});
-
-$("#firstName").keyup(() => {
-    console.log(`Keyup: ${String($("#firstName").val())}`);
-});
-
-$("#firstName").keypress(() => {
-    console.log(`Keypress: ${String($("#firstName").val())}`);
-});
-
 
 $("#firstName").keydown(() => {
     firstname = String($("#firstName").val());
