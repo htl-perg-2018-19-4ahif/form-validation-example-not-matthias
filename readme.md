@@ -6,7 +6,7 @@ A simple example of a form validation.
 
 ```
 git clone https://github.com/htl-perg-2018-19-4ahif/form-validation-example-not-matthias.git
-cd snake-exercise-not-matthias
+cd form-validation-example-not-matthias
 npm install
 npm run build
 ```
