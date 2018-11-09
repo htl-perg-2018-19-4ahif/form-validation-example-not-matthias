@@ -21,6 +21,7 @@
                     First name is mandatory
                 </div>
             </div>
+
             <div class="form-group">
                 <label for="lastName">Last name:</label>
                 <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
@@ -28,13 +29,15 @@
                     Last name is mandatory
                 </div>
             </div>
+
             <div class="form-group">
                 <label for="email">Email address:</label>
                 <input type="email" class="form-control" id="email" placeholder="Enter your email address">
                 <div id="emailMandatory" class="alert alert-warning">
                     Email is mandatory if you want to receive our newsletter.
-                </small>
+                </div>
             </div>
+
             <div class="form-group">
                 <label for="mediaChannelSelect">How did you hear from us?</label>
                 <select class="form-control" id="mediaChannelSelect">
@@ -43,6 +46,7 @@
                     <option>Other</option>
                 </select>
             </div>
+
             <div class="form-group">
                 <textarea class="form-control" id="otherMediaChannel" rows="3" placeholder="Please describe where you have read about us..."></textarea>
             </div>
@@ -52,12 +56,14 @@
                     Subscribe to newsletter
                 </label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            
+            <button type="submit" class="btn btn-primary" disabled="true">Submit</button>
         </form>
     </div>
 
     <script src="jquery.js"></script>
     <script src="bootstrap.js"></script>
+    <script src="form-validation.js"></script>
 </body>
 
 </html>
