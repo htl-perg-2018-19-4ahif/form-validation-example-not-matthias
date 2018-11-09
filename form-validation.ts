@@ -26,21 +26,31 @@ let email: string = '';
 let mediaChannel: string = '';
 let otherMedia: string = '';
 
-$('#firstName').keydown(() => {
+$('#firstName').keyup(() => {
     firstname = String($('#firstName').val());
     showIfEmpty('#firstNameMandatory', firstname);
 });
 
-$('#lastName').keydown(() => {
+$('#lastName').keyup(() => {
     lastname = String($('#lastName').val());
     showIfEmpty('#lastNameMandatory', lastname);
 });
 
-$('#email').keydown(() => {
+$('#email').keyup(() => {
     email = String($('#email').val());
 
+    // If someone wants the newsletter, they must specify an email
     if ($('#newsletter').prop('checked'))
-        showIfEmpty('#email', email);
+        showIfEmpty('#emailMandatory', email);
+});
+
+$('#newsletter').change(() => {
+    // If someone wants the newsletter, they must specify an email
+    if ($('#newsletter').is(':checked')) {
+        showIfEmpty('#emailMandatory', String($('#email').val()));
+    } else {
+        $('#emailMandatory').hide();
+    }
 });
 
 $('#mediaChannelSelect').change(() => {
