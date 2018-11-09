@@ -78,4 +78,4 @@ typings/
 
 
 # Custom rules
-*.js
+dist/
